@@ -489,3 +489,1699 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/shared/_links.html.erb (0.7ms)
   Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
 Completed 200 OK in 125ms (Views: 123.8ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (14.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateStocks (20160424200138)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "stocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ticker" varchar, "name" varchar, "last_price" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160424200138"]]
+  [1m[36m (21.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mStock Load (0.6ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "GOOG"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks"
+
+
+Started GET "/" for ::1 at 2016-04-28 15:35:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (21.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1449ms (Views: 1176.9ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/images/favicon.ico" for ::1 at 2016-04-28 15:35:29 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kibeom-macpro/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kibeom-macpro/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kibeom-macpro/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (85.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (389.9ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (650.1ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (913.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-04-28 15:35:33 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g8Qz5VIytbJKxfUDBo4+Fhy4ObcOprVLij2MjUVXJos4kiKP8H0kr5Ner6xswdcuTpHFRXGg8wJeKQizrVBzpg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-28 15:35:33 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-28 15:35:33 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (101.1ms)
+Completed 200 OK in 258ms (Views: 233.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 15:35:46 -0400
+Processing by UsersController#my_portfolio as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-28 15:35:46 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 200ms (Views: 198.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-04-28 15:35:50 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ODceidwnP/sYoadVMZK3Xha14XTZYefavCecrfckkILVhNUGMYKFbzRkIgU6YVJ2dBzc2ZrT0hkp0j0UOzlaxA==", "user"=>{"email"=>"terr76.kim@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (4.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "terr76.kim@gmail.com"]]
+Completed 401 Unauthorized in 280ms (ActiveRecord: 4.8ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ODceidwnP/sYoadVMZK3Xha14XTZYefavCecrfckkILVhNUGMYKFbzRkIgU6YVJ2dBzc2ZrT0hkp0j0UOzlaxA==", "user"=>{"email"=>"terr76.kim@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 297ms (Views: 109.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-04-28 15:35:54 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J0z7kvR0TiGpm07fwXYm8dTlYT9MiBybs5LRjji9FsXK/zAdGdH0tYVey4/KhcPZtkxckg86KVgmZ3A39KDcgw==", "user"=>{"email"=>"terr76.kim@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "terr76.kim@gmail.com"]]
+  [1m[35m (1.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-04-24 20:10:42.145662"], ["current_sign_in_at", "2016-04-28 19:35:54.303001"], ["sign_in_count", 6], ["updated_at", "2016-04-28 19:35:54.307179"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/my_portfolio
+Completed 302 Found in 317ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 15:35:54 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/my_portfolio.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 145ms (Views: 143.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks" for ::1 at 2016-04-28 15:36:11 -0400
+
+SyntaxError (/Users/kibeom-macpro/Sites/ruby/rails/finance-tracker/app/controllers/stocks_controller.rb:1: syntax error, unexpected <<, expecting '<' or ';' or '\n'
+class StocksController << ApplicationController
+                         ^):
+  app/controllers/stocks_controller.rb:1: syntax error, unexpected <<, expecting '<' or ';' or '\n'
+
+
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (135.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.3ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (212.3ms)
+
+
+Started GET "/search_stocks" for ::1 at 2016-04-28 15:37:08 -0400
+Processing by StocksController#search as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 61ms (Views: 20.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/search_stocks?stock=goog" for ::1 at 2016-04-28 15:37:20 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"stock"=>"goog"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+Completed 200 OK in 1381ms (Views: 23.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/search_stocks?stock=GOOG" for ::1 at 2016-04-28 15:37:55 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"stock"=>"GOOG"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "GOOG"]]
+Completed 200 OK in 768ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?stock=GOOG" for ::1 at 2016-04-28 15:44:11 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"stock"=>"GOOG"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "GOOG"]]
+  Rendered stocks/_lookup.html.erb (1.5ms)
+Completed 200 OK in 1334ms (Views: 17.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/search_stocks" for ::1 at 2016-04-28 15:44:33 -0400
+Processing by StocksController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks" for ::1 at 2016-04-28 15:47:48 -0400
+Processing by StocksController#search as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks?stock=GOOG" for ::1 at 2016-04-28 15:48:07 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"stock"=>"GOOG"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "GOOG"]]
+  Rendered stocks/_lookup.html.erb (1.9ms)
+Completed 500 Internal Server Error in 1338ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/Users/kibeom-macpro/Sites/ruby/rails/finance-tracker/app/views/stocks/_lookup.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/stocks/_lookup.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/controllers/stocks_controller.rb:11:in `search'
+
+
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.4ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (147.2ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (210.7ms)
+
+
+Started GET "/search_stocks?stock=GOOG" for ::1 at 2016-04-28 15:49:14 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"stock"=>"GOOG"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "GOOG"]]
+  Rendered stocks/_lookup.html.erb (2.3ms)
+Completed 200 OK in 1241ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=GOOG&button=" for ::1 at 2016-04-28 15:49:19 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"utf8"=>"✓", "stock"=>"GOOG", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "GOOG"]]
+  Rendered stocks/_lookup.html.erb (0.6ms)
+Completed 200 OK in 1420ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=GOOG&button=" for ::1 at 2016-04-28 15:49:22 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"utf8"=>"✓", "stock"=>"GOOG", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "GOOG"]]
+  Rendered stocks/_lookup.html.erb (0.6ms)
+Completed 200 OK in 794ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 15:50:30 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/my_portfolio.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Missing partial stock/_lookup with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/kibeom-macpro/Sites/ruby/rails/finance-tracker/app/views"
+  * "/Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/devise-bootstrap-views-0.0.8/app/views"
+  * "/Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.2/app/views"
+  * "/Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/devise-4.0.0/app/views"
+):
+    1: <%= render 'stock/lookup' %>
+  app/views/users/my_portfolio.html.erb:1:in `_app_views_users_my_portfolio_html_erb__3939146054621624902_70217533960880'
+
+
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.2ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (148.8ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.2ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (218.6ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 15:50:56 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.9ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 428ms (Views: 425.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 15:50:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/assets/fontawesome-webfont-a7c7e4930090e038a280fd61d88f0dc03dad4aeaedbd8c9be3dd9aa4c3b6f8d1.woff" for ::1 at 2016-04-28 15:50:57 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:51:02 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (1.5ms)
+Completed 200 OK in 2941ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:51:06 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (0.6ms)
+Completed 200 OK in 3111ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:51:09 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (0.6ms)
+Completed 200 OK in 4801ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:51:14 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (0.7ms)
+Completed 200 OK in 3913ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:51:18 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (1.0ms)
+Completed 200 OK in 4358ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 15:52:16 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (1.9ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 414ms (Views: 411.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 15:55:29 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (2.0ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 478ms (Views: 475.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 15:55:29 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 15:55:30 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-28 15:55:30 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:55:39 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (1.7ms)
+Completed 200 OK in 1805ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:55:41 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (0.7ms)
+Completed 200 OK in 884ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 15:55:43 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (0.5ms)
+Completed 200 OK in 864ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 15:55:51 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (0.7ms)
+Completed 200 OK in 942ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 15:55:53 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (0.9ms)
+Completed 200 OK in 1111ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:02:51 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.9ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 1034ms (Views: 1031.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/stocks.self-c5e98524a3aaeabd56d1338452953997b798f0bc225b7434e30b798bf347a039.js?body=1" for ::1 at 2016-04-28 16:02:52 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:02:55 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (0.7ms)
+Completed 200 OK in 1377ms (Views: 26.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:03:49 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (1.7ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 680ms (Views: 678.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/stocks.self-c5e98524a3aaeabd56d1338452953997b798f0bc225b7434e30b798bf347a039.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-28 16:03:50 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:03:53 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (1296.8ms)
+Completed 200 OK in 2136ms (Views: 1321.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=appl&button=" for ::1 at 2016-04-28 16:04:13 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"appl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "appl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 709ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=appl&button=" for ::1 at 2016-04-28 16:04:18 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"appl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "appl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 257ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=apple&button=" for ::1 at 2016-04-28 16:04:26 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"apple", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "apple"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 266ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=apple&button=" for ::1 at 2016-04-28 16:05:55 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"apple", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "apple"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 271ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:06:02 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (549.8ms)
+Completed 200 OK in 2283ms (Views: 594.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:06:07 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.8ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 949ms (Views: 945.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/custom.self-aab7821007730888f59d0df08f01cf16f8d2b56d87ff453d76dae8de7b9f676d.css?body=1" for ::1 at 2016-04-28 16:06:08 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:06:11 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (520.4ms)
+Completed 200 OK in 1360ms (Views: 545.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:06:14 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.6ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 128ms (Views: 126.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/custom.self-aab7821007730888f59d0df08f01cf16f8d2b56d87ff453d76dae8de7b9f676d.css?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/stocks.self-c5e98524a3aaeabd56d1338452953997b798f0bc225b7434e30b798bf347a039.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 16:06:14 -0400
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:06:16 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.5ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 133ms (Views: 130.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:06:17 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.7ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 132.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/custom.self-aab7821007730888f59d0df08f01cf16f8d2b56d87ff453d76dae8de7b9f676d.css?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/stocks.self-c5e98524a3aaeabd56d1338452953997b798f0bc225b7434e30b798bf347a039.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 16:06:17 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:06:20 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (1078.5ms)
+Completed 200 OK in 1918ms (Views: 1104.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:06:32 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.7ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 211ms (Views: 208.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/custom.self-5356a141c1c5e07df168843fc3269ff335a66cd3f84e1c42d07c00488b589082.css?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/stocks.self-c5e98524a3aaeabd56d1338452953997b798f0bc225b7434e30b798bf347a039.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-28 16:06:32 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:06:34 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (661.9ms)
+Completed 200 OK in 1536ms (Views: 687.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:06:53 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (544.1ms)
+Completed 200 OK in 1411ms (Views: 572.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:11:01 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (628.0ms)
+Completed 200 OK in 2001ms (Views: 652.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aple&button=" for ::1 at 2016-04-28 16:11:08 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aple", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aple"]]
+  Rendered stocks/_lookup.html.erb (705.5ms)
+Completed 200 OK in 1727ms (Views: 730.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aple&button=" for ::1 at 2016-04-28 16:11:11 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aple", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aple"]]
+  Rendered stocks/_lookup.html.erb (581.5ms)
+Completed 200 OK in 1518ms (Views: 609.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=sdsf&button=" for ::1 at 2016-04-28 16:11:18 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"sdsf", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "sdsf"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 251ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=LALSSLD&button=" for ::1 at 2016-04-28 16:32:54 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"LALSSLD", "button"=>""}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "LALSSLD"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 771ms (Views: 2.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=LALSSLD&button=" for ::1 at 2016-04-28 16:32:55 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"LALSSLD", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "LALSSLD"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 274ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=sdsf&button=" for ::1 at 2016-04-28 16:35:51 -0400
+Processing by StocksController#search as HTML
+  Parameters: {"utf8"=>"✓", "stock"=>"sdsf", "button"=>""}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "sdsf"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 341ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=LALSSLD&button=" for ::1 at 2016-04-28 16:36:06 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"LALSSLD", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "LALSSLD"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1394ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=apple&button=" for ::1 at 2016-04-28 16:36:13 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"apple", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "apple"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 274ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:36:20 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (649.0ms)
+Completed 200 OK in 1566ms (Views: 695.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 16:36:26 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "goog"]]
+  Rendered stocks/_lookup.html.erb (599.6ms)
+Completed 200 OK in 1608ms (Views: 660.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=asdfasdf&button=" for ::1 at 2016-04-28 16:36:32 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"asdfasdf", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "asdfasdf"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 270ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:36:44 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (1.8ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 818ms (Views: 815.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/stocks.self-9dfa6b21e1cea28d3bf8326fbffaaaf9c05187e8c02268a2983771d6eb44388d.js?body=1" for ::1 at 2016-04-28 16:36:45 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:36:51 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (574.1ms)
+Completed 200 OK in 1566ms (Views: 671.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:36:58 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 606ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:16 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 950ms (Views: 6.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:18 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 246ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:19 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 256ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:20 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 287ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:20 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 255ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:21 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 267ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:21 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (3.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.4ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 311ms (Views: 0.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaapl&button=" for ::1 at 2016-04-28 16:40:21 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaapl", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "aaapl"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 277ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:40:24 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.9ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 997ms (Views: 994.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/stocks.self-c2fd87f26d04c3fd4c2cf644adf6f7bbf655ca537dadc0b50d7b482f9b03fa9f.js?body=1" for ::1 at 2016-04-28 16:40:25 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=xxx&button=" for ::1 at 2016-04-28 16:40:28 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"xxx", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "xxx"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 339ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:40:46 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (672.8ms)
+Completed 200 OK in 1485ms (Views: 698.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:47:09 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (731.6ms)
+Completed 200 OK in 2283ms (Views: 805.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:47:12 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (578.0ms)
+Completed 200 OK in 1485ms (Views: 605.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaplx&button=" for ::1 at 2016-04-28 16:47:15 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaplx", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aaplx"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 290ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaplx&button=" for ::1 at 2016-04-28 16:47:25 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaplx", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aaplx"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 342ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aaple&button=" for ::1 at 2016-04-28 16:47:30 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aaple", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aaple"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 317ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 16:47:37 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (589.4ms)
+Completed 200 OK in 1486ms (Views: 636.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 16:47:44 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (0.9ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 440ms (Views: 438.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=fw&button=" for ::1 at 2016-04-28 16:48:01 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"fw", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "fw"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 847ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=fb&button=" for ::1 at 2016-04-28 16:48:03 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"fb", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "fb"]]
+  Rendered stocks/_lookup.html.erb (550.1ms)
+Completed 200 OK in 1956ms (Views: 597.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-28 21:51:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (14.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1958ms (Views: 1795.0ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/images/favicon.ico" for ::1 at 2016-04-28 21:51:18 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/kibeom-macpro/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kibeom-macpro/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kibeom-macpro/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (57.0ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (278.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (405.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (882.9ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 21:51:23 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered stocks/_lookup.html.erb (2.4ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 137ms (Views: 134.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=asdf&button=" for ::1 at 2016-04-28 21:51:26 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"asdf", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (15.6ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "asdf"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 719ms (Views: 20.2ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 21:51:31 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered stocks/_lookup.html.erb (449.3ms)
+Completed 200 OK in 1150ms (Views: 478.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=asdf&button=" for ::1 at 2016-04-28 21:54:54 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"asdf", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "asdf"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 249ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 21:58:03 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered common/_spinner.html.erb (0.5ms)
+  Rendered stocks/_lookup.html.erb (8.5ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 306ms (Views: 301.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/custom.self-5356a141c1c5e07df168843fc3269ff335a66cd3f84e1c42d07c00488b589082.css?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/stocks.self-46fa9a4f82d33112b540d900f32796aa5e7c883c588fec01a002983a69342210.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/assets/application.self-e3d8ac0636d3c23ba07721c8b4b379ddf021ddfdee7d6e0d883008a22f6e4578.js?body=1" for ::1 at 2016-04-28 21:58:03 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=sd&button=" for ::1 at 2016-04-28 21:58:22 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"sd", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "sd"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 659ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=fb&button=" for ::1 at 2016-04-28 21:58:29 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"fb", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "fb"]]
+  Rendered common/_spinner.html.erb (0.5ms)
+  Rendered stocks/_lookup.html.erb (464.0ms)
+Completed 200 OK in 1236ms (Views: 489.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=goog&button=" for ::1 at 2016-04-28 21:58:37 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"goog", "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "goog"]]
+  Rendered common/_spinner.html.erb (0.1ms)
+  Rendered stocks/_lookup.html.erb (525.5ms)
+Completed 200 OK in 1256ms (Views: 551.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=asdfasdg&button=" for ::1 at 2016-04-28 21:59:54 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"asdfasdg", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1  [["ticker", "asdfasdg"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 26645ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_portfolio" for ::1 at 2016-04-28 22:00:20 -0400
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered common/_spinner.html.erb (0.1ms)
+  Rendered stocks/_lookup.html.erb (3.3ms)
+  Rendered users/my_portfolio.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 327ms (Views: 322.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=asdfasdg&button=" for ::1 at 2016-04-28 22:00:21 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"asdfasdg", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "asdfasdg"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 436ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/custom.self-5356a141c1c5e07df168843fc3269ff335a66cd3f84e1c42d07c00488b589082.css?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/devise_bootstrap_views.self-4d1de70925290107f70f42b952e24b0c9083b237e8a53848ebfb94c423f26454.css?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/application.self-e3d8ac0636d3c23ba07721c8b4b379ddf021ddfdee7d6e0d883008a22f6e4578.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-28 22:00:21 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-28 22:00:22 -0400
+
+
+Started GET "/assets/stocks.self-d4491f5bd8cfe1446d4baaa1f0e000c0cdd84dad231b578a9f5f968c4d897743.js?body=1" for ::1 at 2016-04-28 22:00:22 -0400
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=&button=" for ::1 at 2016-04-28 22:00:26 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"", "button"=>""}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", ""]]
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 1.1ms)
+
+StockQuote::NoDataForStockError (StockQuote::NoDataForStockError):
+  app/models/stock.rb:8:in `new_from_lookup'
+  app/controllers/stocks_controller.rb:6:in `search'
+
+
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.4ms)
+  Rendered /Users/kibeom-macpro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (122.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=sdaf&button=" for ::1 at 2016-04-28 22:00:29 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"sdaf", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "sdaf"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 234ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 22:00:34 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered common/_spinner.html.erb (0.1ms)
+  Rendered stocks/_lookup.html.erb (486.5ms)
+Completed 200 OK in 1247ms (Views: 513.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=yahoo&button=" for ::1 at 2016-04-28 22:00:38 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"yahoo", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "yahoo"]]
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 199ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=fb&button=" for ::1 at 2016-04-28 22:00:43 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"fb", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "fb"]]
+  Rendered common/_spinner.html.erb (0.1ms)
+  Rendered stocks/_lookup.html.erb (501.4ms)
+Completed 200 OK in 1193ms (Views: 527.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search_stocks?utf8=%E2%9C%93&stock=aapl&button=" for ::1 at 2016-04-28 22:00:46 -0400
+Processing by StocksController#search as JS
+  Parameters: {"utf8"=>"✓", "stock"=>"aapl", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ?  ORDER BY "stocks"."id" ASC LIMIT 1[0m  [["ticker", "aapl"]]
+  Rendered common/_spinner.html.erb (0.1ms)
+  Rendered stocks/_lookup.html.erb (522.7ms)
+Completed 200 OK in 1289ms (Views: 550.0ms | ActiveRecord: 0.3ms)
