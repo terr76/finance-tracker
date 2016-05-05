@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
     user_stocks.where(stock_id: stock.id).exists?
   end
 
+<<<<<<< HEAD
   def not_friends_with?(friend_id)
     friendships.where(friend_id: friend_id).count < 1
   end
@@ -59,4 +60,6 @@ class User < ActiveRecord::Base
     where("lower(#{field_name}) like ?", "%#{param}%")
   end
 
+=======
+>>>>>>> 99245e75c6118da4e029a8454393b10a08eac04a
 end
