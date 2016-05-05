@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def my_friends
-<<<<<<< HEAD
     @friendships = current_user.friends
   end
 
@@ -34,8 +33,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_stocks = @user.stocks
-=======
 
->>>>>>> 99245e75c6118da4e029a8454393b10a08eac04a
   end
 end
